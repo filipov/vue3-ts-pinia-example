@@ -1,7 +1,7 @@
 # Vue3(Composition API)/Typescript/Pinia example
 
 [![Linter Status](https://github.com/filipov/vue3-ts-pinia-example/actions/workflows/lint.yml/badge.svg)](https://github.com/filipov/vue3-ts-pinia-example/actions)
-[![Tests Status](https://github.com/filipov/vue3-ts-pinia-example/actions/workflows/lint.yml/badge.svg)](https://github.com/filipov/vue3-ts-pinia-example/actions)
+[![Tests Status](https://github.com/filipov/vue3-ts-pinia-example/actions/workflows/test.yml/badge.svg)](https://github.com/filipov/vue3-ts-pinia-example/actions)
 
 This template should help get you started developing with Vue 3 in Vite.
 
