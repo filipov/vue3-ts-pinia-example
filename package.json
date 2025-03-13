@@ -1,0 +1,24 @@
+{
+  "name": "vue3-ts-pinia-example",
+  "version": "1.0.0",
+  "description": "Vue3(Composition API), Typescript and Pinia example",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/filipov/vue3-ts-pinia-example.git"
+  },
+  "keywords": [
+    "vue3",
+    "pinia",
+    "typescript"
+  ],
+  "author": "Andrey Filipov <andrey@filipov.dev>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/filipov/vue3-ts-pinia-example/issues"
+  },
+  "homepage": "https://github.com/filipov/vue3-ts-pinia-example#readme"
+}
