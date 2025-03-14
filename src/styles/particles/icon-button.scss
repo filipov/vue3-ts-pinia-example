@@ -1,0 +1,14 @@
+.icon-button {
+  border: none;
+  outline: none;
+  background: none;
+  padding: 5px;
+  min-width: 0;
+  height: 33px;
+  cursor: pointer;
+  color: var(--color-action);
+
+  &.remove {
+    color: var(--color-error);
+  }
+}

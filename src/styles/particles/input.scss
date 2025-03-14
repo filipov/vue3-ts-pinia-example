@@ -1,0 +1,25 @@
+.input {
+  border: solid 1px var(--color-text);
+  outline: none;
+  padding: 5px;
+  border-radius: 4px;
+  min-width: 0;
+  height: 33px;
+  cursor: auto;
+  transition: border-color 0.3s;
+  background-color: var(--color-background);
+  color: var(--color-text);
+
+  &:invalid {
+    border-color: var(--color-error);
+  }
+
+  &:focus {
+    outline-color: var(--color-action);
+    outline-style: groove;
+
+    &:invalid {
+      outline-color: var(--color-error);
+    }
+  }
+}
