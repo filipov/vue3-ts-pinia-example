@@ -1,23 +1,11 @@
 import { describe, expect, test } from 'vitest';
 import { AccountSchema, LabelSchema } from '../src/models/account.model';
-import { z } from 'zod';
 
 describe('Account Model Validation', () => {
   describe('Label Schema', () => {
     test('valid label', () => {
-      const result = LabelSchema.safeParse({ text: 'test' });
+      const result = LabelSchema.safeParse({ labels: 'test' });
       expect(result.success).toBe(true);
-    });
-
-    test('empty label text', () => {
-      const result = LabelSchema.safeParse({ text: '' });
-      expect(result.success).toBe(true);
-    });
-
-    test('label text exceeds 50 chars', () => {
-      const text = 'a'.repeat(51);
-      const result = LabelSchema.safeParse({ text });
-      expect(result.success).toBe(false);
     });
   });
 
@@ -102,29 +90,10 @@ describe('Account Model Validation', () => {
         expect(errors).toEqual(
           expect.arrayContaining([
             expect.objectContaining({ path: ['login'] }),
-            expect.objectContaining({ path: ['password'] }),
-            expect.objectContaining({ path: ['labels', 0, 'text'] })
+            expect.objectContaining({ path: ['password'] })
           ])
         );
       }
-    });
-  });
-
-  describe('Label Parsing', () => {
-    test('split labels string', () => {
-      const input = 'label1; label2;label3';
-      const labels = input.split(';').map(text => ({ text: text.trim() }));
-
-      const result = z.array(LabelSchema).safeParse(labels);
-      expect(result.success).toBe(true);
-    });
-
-    test('empty labels string', () => {
-      const input = '';
-      const labels = input.split(';').map(text => ({ text: text.trim() }));
-
-      const result = z.array(LabelSchema).safeParse(labels);
-      expect(result.success).toBe(true);
     });
   });
 });

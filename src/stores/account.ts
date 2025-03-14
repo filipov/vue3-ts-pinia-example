@@ -31,6 +31,7 @@ export const useAccountStore = defineStore('account', {
       };
 
       this.accounts.push(newAccount);
+      this.saveToLocalStorage();
     },
     /**
      * Удаляет учетную запись
@@ -39,6 +40,7 @@ export const useAccountStore = defineStore('account', {
      */
     deleteAccount(id: string) {
       this.accounts = this.accounts.filter((account) => account.id !== id);
+      this.saveToLocalStorage();
     },
     /**
      * Обновляет существующую учетную запись
@@ -51,6 +53,16 @@ export const useAccountStore = defineStore('account', {
 
       if (index !== -1) {
         this.accounts[index] = updatedAccount;
+        this.saveToLocalStorage();
+      }
+    },
+    saveToLocalStorage() {
+      localStorage.setItem('accounts', JSON.stringify(this.accounts));
+    },
+    loadFromLocalStorage() {
+      const stored = localStorage.getItem('accounts');
+      if (stored) {
+        this.accounts = JSON.parse(stored);
       }
     },
   },
