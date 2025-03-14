@@ -1,12 +1,11 @@
 import { defineConfig } from 'vitest/config';
+import {fileURLToPath, URL} from "node:url";
 
 export default defineConfig({
   test: {
     environment: 'jsdom',
-    coverage: {
-      provider: 'v8',
-      reporter: ['text', 'json', 'html'],
-      include: ['src/models/account.model.ts']
-    }
+    alias: {
+      '@': fileURLToPath(new URL('./src', import.meta.url))
+    },
   }
 });
